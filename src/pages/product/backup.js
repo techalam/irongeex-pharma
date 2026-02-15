@@ -1,11 +1,14 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   CheckCircle,
   Mail,
   Phone,
   MapPin,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import Products from "../../utils/products.json";
 import { useRouter } from "next/router";
@@ -15,6 +18,7 @@ export default function ProductDetail() {
   const { id } = router.query;
 
   const product = Products.find((p) => p.id === Number(id));
+  const [index, setIndex] = useState(0);
 
   if (!product) {
     return (
@@ -24,6 +28,12 @@ export default function ProductDetail() {
     );
   }
 
+  const nextImage = () =>
+    setIndex((prev) => (prev + 1) % product.images.length);
+
+  const prevImage = () =>
+    setIndex((prev) => (prev - 1 + product.images.length) % product.images.length);
+
   return (
     <main className="min-h-screen bg-black text-zinc-200">
       <section className="max-w-7xl mx-auto px-6 pt-32 pb-28 grid grid-cols-1 lg:grid-cols-2 gap-20">
@@ -31,15 +41,63 @@ export default function ProductDetail() {
         {/* ================= LEFT — IMAGE ================= */}
         <div className="relative">
           <div className="relative aspect-[4/3] bg-zinc-950 border border-zinc-800 overflow-hidden">
-            <motion.img
-              src={product.images[0]}
-              alt={product.name}
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.35 }}
-              className="absolute inset-0 w-full h-full object-cover"
-            />
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={index}
+                src={product.images[index]}
+                alt={product.name}
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.35 }}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </AnimatePresence>
           </div>
+
+          {/* Controls */}
+          {product.images.length > 1 && (
+            <>
+              <button
+                onClick={prevImage}
+                className="
+                  absolute left-4 top-1/2 -translate-y-1/2
+                  p-2 bg-black/70
+                  border border-zinc-700
+                  text-[#b11217]
+                "
+              >
+                <ChevronLeft size={20} />
+              </button>
+
+              <button
+                onClick={nextImage}
+                className="
+                  absolute right-4 top-1/2 -translate-y-1/2
+                  p-2 bg-black/70
+                  border border-zinc-700
+                  text-[#b11217]
+                "
+              >
+                <ChevronRight size={20} />
+              </button>
+            </>
+          )}
+
+          {/* Dots */}
+          {product.images.length > 1 && (
+            <div className="mt-4 flex justify-center gap-2">
+              {product.images.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setIndex(i)}
+                  className={`w-2 h-2 rounded-full transition ${
+                    i === index ? "bg-[#b11217]" : "bg-zinc-600"
+                  }`}
+                />
+              ))}
+            </div>
+          )}
         </div>
 
         {/* ================= RIGHT — INFO ================= */}

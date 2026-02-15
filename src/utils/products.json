@@ -15,7 +15,7 @@
   },
   {
     "id": 2,
-    "name": "Tren Mix-150",
+    "name": "Ten Mix-150",
     "title": "Trenbolone Mix",
     "description": "A premium blend of trenbolone esters designed for a powerful and sustained release effect throughout your cycle.",
     "benefits": [
@@ -25,21 +25,21 @@
       "No water retention"
     ],
     "contact": "For purchase inquiries, message us directly on WhatsApp.",
-    "images": ["/images/trenMixV1.jpeg", "/images/trenMixV2.jpeg"]
+    "images": ["/images/tenMixV1.jpeg", "/images/trenMixV2.jpeg"]
   },
   {
     "id": 3,
-    "name": "Winni - 100",
-    "title": "Winstrol",
-    "description": "High-quality Winstrol designed for cutting cycles, promoting lean muscle mass and definition.",
+    "name": "Bold-300",
+    "title": "Boldenone Undecylenate",
+    "description": "A versatile anabolic steroid that promotes steady muscle growth and improved appetite, making it a favorite among bodybuilders and athletes.",
     "benefits": [
-      "Improves muscle tone and definition",
-      "Boosts strength without weight gain",
-      "Reduces water retention",
-      "Ideal for pre-contest cycles"
+      "Steady muscle gains",
+      "Enhanced appetite and nutrient absorption",
+      "Improved red blood cell production",
+      "Mild androgenic effects"
     ],
     "contact": "Reach us on WhatsApp for detailed cycle guidance.",
-    "images": ["/images/winni100v1.jpeg", "/images/winni100v2.jpeg"]
+    "images": ["/images/bold300v1.jpeg", "/images/bold300v2.jpeg"]
   },
   {
     "id": 4,
@@ -56,22 +56,8 @@
     "images": ["/images/deca300v1.jpeg", "/images/deca300v2.jpeg"]
   },
   {
-    "id": 5,
-    "name": "Heli Power",
-    "title": "Helios",
-    "description": "A cutting-edge fat-burning supplement that helps accelerate metabolism and improve energy levels.",
-    "benefits": [
-      "Boosts metabolism",
-      "Enhances energy output",
-      "Promotes fat loss",
-      "Improves endurance during workouts"
-    ],
-    "contact": "Get in touch for personalized cutting stack suggestions.",
-    "images": ["/images/helipowerv1.jpeg", "/images/helipowerv2.jpeg"]
-  },
-  {
     "id": 6,
-    "name": "L-Carni Blast",
+    "name": "L-Carni-1000",
     "title": "L-Carnitine",
     "description": "A natural fat metabolizer that converts stored fat into usable energy while enhancing endurance.",
     "benefits": [
@@ -82,20 +68,6 @@
     ],
     "contact": "Contact us for pricing and recommended usage protocols.",
     "images": ["/images/Lcarniv1.jpeg", "/images/Lcarniv2.jpeg"]
-  },
-  {
-    "id": 7,
-    "name": "Ment-100",
-    "title": "Trestolone Acetate",
-    "description": "An advanced anabolic compound with potent muscle-building and strength-enhancing properties.",
-    "benefits": [
-      "Explosive muscle growth",
-      "Increased testosterone conversion",
-      "Accelerated strength gains",
-      "Improved protein synthesis"
-    ],
-    "contact": "Reach out to us for cycle customization and dosage plans.",
-    "images": ["/images/ment100v1.jpeg", "/images/ment100v2.jpeg"]
   },
   {
     "id": 8,
