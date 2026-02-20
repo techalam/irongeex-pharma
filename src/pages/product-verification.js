@@ -10,7 +10,7 @@ export default function AuthenticateIronGenex() {
   const [loading, setLoading] = useState(false);
 
   const API_BASE =
-    "https://script.google.com/macros/s/AKfycbwlWmVGG6v9jAuTcdaCNMr_sqTnDfbVeXdTMsTJLjgSlivh-rNTpnkhqwNvlPCPcZAy/exec";
+    "https://script.google.com/macros/s/AKfycbzgZQE0EhSUQRuVlRPS8M7CwItX-57mOeqjWCYwIb93I5PI6IVUL7yBAon2FxFVQ2pn/exec";
   const SECRET_KEY = "asdfghjkl";
 
   const handleCheck = async () => {
