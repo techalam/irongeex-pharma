@@ -7,23 +7,23 @@ import Products from "../utils/products.json";
 export default function ProductsPage() {
   const [filter, setFilter] = useState("ALL");
   const [search, setSearch] = useState("");
+  const [activeTab, setActiveTab] = useState("All");
+  const tabs = ["All", "Injectable", "Oral", "SARMS", "Peptide"];
 
-  const filtered = Products.filter((p) => {
-    const matchesFilter =
-      filter === "ALL"
-        ? true
-        : p.category?.toLowerCase() === filter.toLowerCase();
+  const filtered = Products.filter((product) => {
+    const matchesType =
+      activeTab === "All" ||
+      product.type.toLowerCase() === activeTab.toLowerCase();
 
     const matchesSearch =
-      p.name.toLowerCase().includes(search.toLowerCase()) ||
-      p.title?.toLowerCase().includes(search.toLowerCase());
+      product.name.toLowerCase().includes(search.toLowerCase()) ||
+      product.title?.toLowerCase().includes(search.toLowerCase());
 
-    return matchesFilter && matchesSearch;
+    return matchesType && matchesSearch;
   });
 
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-zinc-200">
-
       {/* ================= HEADER ================= */}
       <section className="max-w-7xl mx-auto px-6 pt-32 pb-16">
         <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-zinc-100">
@@ -34,6 +34,32 @@ export default function ProductsPage() {
           Hardcore nutraceutical formulations engineered for mass, strength,
           endurance, and recovery under extreme training conditions.
         </p>
+      </section>
+
+      {/* ================= TYPE TABS ================= */}
+      <section className="max-w-7xl mx-auto px-6 mb-16">
+        <div className="flex flex-wrap justify-center gap-3">
+          {tabs.map((tab) => (
+            <button
+              key={tab}
+              onClick={() => {
+                setActiveTab(tab);
+                setSearch(""); // reset search on tab change
+              }}
+              className={`
+          px-6 py-3 text-xs sm:text-sm font-bold tracking-wide
+          border rounded-full transition-all duration-300
+          ${
+            activeTab === tab
+              ? "bg-[#b11217] text-white border-[#b11217] shadow-lg shadow-[#b11217]/40"
+              : "bg-[#0f0f0f] border-zinc-700 text-zinc-400 hover:border-[#b11217] hover:text-white"
+          }
+        `}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
       </section>
 
       {/* ================= SEARCH ================= */}

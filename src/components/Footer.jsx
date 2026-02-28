@@ -72,7 +72,7 @@ const Footer = () => {
             </a>
           </p>
 
-          <p className="text-sm text-zinc-400">
+          {/* <p className="text-sm text-zinc-400">
             Phone:{" "}
             <a
               href="tel:+919899646864"
@@ -84,7 +84,7 @@ const Footer = () => {
 
           <p className="text-sm text-zinc-400">
             Delhi, India
-          </p>
+          </p> */}
         </div>
       </div>
 

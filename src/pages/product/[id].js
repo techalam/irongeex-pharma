@@ -98,7 +98,7 @@ export default function ProductDetail() {
                 </a>
               </div>
 
-              <div className="flex items-center gap-3">
+              {/* <div className="flex items-center gap-3">
                 <Phone size={16} className="text-[#b11217]" />
                 <a
                   href="tel:+919899646864"
@@ -111,7 +111,7 @@ export default function ProductDetail() {
               <div className="flex items-center gap-3">
                 <MapPin size={16} className="text-[#b11217]" />
                 <span>Delhi, India</span>
-              </div>
+              </div> */}
             </div>
           </div>
         </motion.div>

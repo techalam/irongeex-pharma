@@ -94,7 +94,7 @@ export default function ContactIronGenex() {
               </div>
             </div>
 
-            <div className="flex items-start gap-4">
+            {/* <div className="flex items-start gap-4">
               <Phone size={20} className="text-[#b11217] mt-1" />
               <div>
                 <p className="text-zinc-100 font-medium">Phone</p>
@@ -113,7 +113,7 @@ export default function ContactIronGenex() {
                 <p className="text-zinc-100 font-medium">Location</p>
                 <p>Delhi, India</p>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <p className="mt-12 max-w-md text-xs text-zinc-500 leading-relaxed">
